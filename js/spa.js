@@ -54,19 +54,7 @@ var spa = (function($){
     //sets initial state and provides feature
     //
     initModule = function($container){
-        //render HTML
-        $container.html(configMap.template_html);
-        $chatSlider = $container.find('.spa-slider');
-        //initialize slider height and title
-        //bind the user click event to the event handler
-        $chatSlider
-            .attr('title',configMap.retracted_title)
-            .click(onClickSlider);
-        return true;
+        spa.shell.initModule($container);
     };
     return {initModule:initModule};
 })(jQuery);
-
-$(function(){
-    spa.initModule($('#spa'));
-});
